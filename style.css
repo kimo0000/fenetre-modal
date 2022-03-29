@@ -1,0 +1,97 @@
+/* reset */
+*,::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,400;1,700&family=Cairo:wght@200;500;900&family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+.modal_btn {
+    width: 150px;
+    padding: 10px 30px;
+    font-size: 17px;
+    margin: 100px 600px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+}
+
+.modal_container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    visibility: hidden;
+    transition: visibility .5s ease;
+}
+
+.modal_container.active {
+    visibility: visible;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333333d3;
+    opacity: 0;
+    transition: opacity .5s .2s;
+}
+
+.modal_container.active .overlay {
+    opacity: 1;
+    transition: all .5s;
+}
+
+.modal {
+    min-width: 300px;
+    max-width: 500px;
+    background: #fff;
+    padding: 15px;
+    position: absolute;
+    border-radius: 5px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    opacity: 0;
+    transition: opacity .5s, transform .5s;
+}
+
+.modal_container.active .modal {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: all .5s .2s;
+}
+
+.modal .btn_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: #f50;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal .modal_title {
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.modal p {
+    color: #999;
+    padding-left: 10px;
+}
+
+
+
